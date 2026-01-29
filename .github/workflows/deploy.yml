@@ -13,9 +13,9 @@ jobs:
      # environment variable 'environment' will be available for all steps in 'test' job
     env:
       #environment: development
-      MONGODB_USERNAME: AnilKumarGithubActionsTest
-      MONGODB_PASSWORD: Ylv93gOwt6wCejTm
-      MONGODB_CLUSTER_ADDRESS: githubactions.6yajh0z.mongodb.net
+      MONGODB_USERNAME: anilnishad298_db_user #AnilKumarGithubActionsTest
+      MONGODB_PASSWORD: WiXCoLR7NlFTmeMj #Ylv93gOwt6wCejTm
+      MONGODB_CLUSTER_ADDRESS: cluster0.pdf6scl.mongodb.net/?appName=Cluster0 #githubactions.6yajh0z.mongodb.net
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
