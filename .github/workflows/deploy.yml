@@ -12,11 +12,11 @@ jobs:
      # Setting environment variable on Job Level
      # environment variable 'environment' will be available for all steps in 'test' job
     env:
-      environment: development
+      #environment: development
       MONGODB_USERNAME: AnilKumarGithubActionsTest
       MONGODB_PASSWORD: Ylv93gOwt6wCejTm
       MONGODB_CLUSTER_ADDRESS: githubactions.6yajh0z.mongodb.net
-      Port: 8080
+      PORT: 8080
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -29,19 +29,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run server
-        run: npm start & npx wait-on http://127.0.0.1:$Port
+        run: npm start & npx wait-on http://127.0.0.1:$PORT
       - name: Run tests
         run: npm test
       - name: Output information
         run: |
-         echo "Mongodb DB Name is $MONGODB_DB_NAME, Environment is $environment, MONGODB Username is $MONGODB_USERNAME, MONGODB Password is $MONGODB_PASSWORD, MONGODB Cluster Address is $MONGODB_CLUSTER_ADDRESS, Application Port is $Port"
-         echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
+          echo "Mongodb DB Name is $MONGODB_DB_NAME, Environment is $environment, MONGODB Username is $MONGODB_USERNAME, MONGODB Password is $MONGODB_PASSWORD, MONGODB Cluster Address is $MONGODB_CLUSTER_ADDRESS, Application Port is $Port"
+          echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
-        run: | 
+         
+        run: |
           # THIS WILL FAIL AS ENVIRONMENT VARIABLES ARE NOT DEFINED IN THIS JOB       
           echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
           echo "MONGODB_DB_NAME is $MONGODB_DB_NAME"
