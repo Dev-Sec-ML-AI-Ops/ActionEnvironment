@@ -6,7 +6,7 @@ on:
       - dev
 # Setting environment variables on workflow level      
 env:
-  MONGODB_DB_NAME: gha-demo
+  MONGODB_DB_NAME: Cluster0
 jobs:
   test:
      # Setting environment variable on Job Level
