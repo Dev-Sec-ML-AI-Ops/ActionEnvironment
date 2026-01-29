@@ -7,16 +7,15 @@ on:
 # Setting environment variables on workflow level      
 env:
   MONGODB_DB_NAME: Cluster0
+  MONGODB_USERNAME: anilnishad298_db_user
+  MONGODB_PASSWORD: WiXCoLR7NlFTmeMj
+  MONGODB_CLUSTER_ADDRESS: cluster0.pdf6scl.mongodb.net
+  PORT: 8080
+
 jobs:
   test:
      # Setting environment variable on Job Level
      # environment variable 'environment' will be available for all steps in 'test' job
-    env:
-      #environment: development
-      MONGODB_USERNAME: anilnishad298_db_user #AnilKumarGithubActionsTest
-      MONGODB_PASSWORD: WiXCoLR7NlFTmeMj #Ylv93gOwt6wCejTm
-      MONGODB_CLUSTER_ADDRESS: cluster0.pdf6scl.mongodb.net #githubactions.6yajh0z.mongodb.net
-      PORT: 8080
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -34,16 +33,14 @@ jobs:
         run: npm test
       - name: Output information
         run: |
-          echo "Mongodb DB Name is $MONGODB_DB_NAME, Environment is $environment, MONGODB Username is $MONGODB_USERNAME, MONGODB Password is $MONGODB_PASSWORD, MONGODB Cluster Address is $MONGODB_CLUSTER_ADDRESS, Application Port is $Port"
+          echo "Mongodb DB Name is $MONGODB_DB_NAME, MONGODB Username is $MONGODB_USERNAME, MONGODB Cluster Address is $MONGODB_CLUSTER_ADDRESS, Application Port is $PORT"
           echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
-         
         run: |
-          # THIS WILL FAIL AS ENVIRONMENT VARIABLES ARE NOT DEFINED IN THIS JOB       
           echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
           echo "MONGODB_DB_NAME is $MONGODB_DB_NAME"
           echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
