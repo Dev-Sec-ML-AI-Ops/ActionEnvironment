@@ -7,9 +7,9 @@ on:
 # Setting environment variables on workflow level      
 env:
   MONGODB_DB_NAME: Cluster0
-  MONGODB_USERNAME: anilnishad298_db_user
-  MONGODB_PASSWORD: WiXCoLR7NlFTmeMj
-  MONGODB_CLUSTER_ADDRESS: cluster0.pdf6scl.mongodb.net
+  MONGODB_USERNAME: anilkumar100_db_user
+  MONGODB_PASSWORD: gXG9c6vyBBycHhgl
+  MONGODB_CLUSTER_ADDRESS: cluster0.irwaqhc.mongodb.net
   PORT: 8080
 
 jobs:
