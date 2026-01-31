@@ -8,8 +8,8 @@ on:
 env:
   MONGODB_DB_NAME: gha-web
   MONGODB_USERNAME: anilnishad298_db_user
-  MONGODB_PASSWORD: WiXCoLR7NlFTmeMj
-  MONGODB_CLUSTER_ADDRESS: cluster0.pdf6scl.mongodb.net
+  MONGODB_PASSWORD: sUusyb7PpVmq5gEu
+  MONGODB_CLUSTER_ADDRESS: cluster0.pdf6scl.mongodb.net/?appName=Cluster0
   PORT: 8080
 
 jobs:
