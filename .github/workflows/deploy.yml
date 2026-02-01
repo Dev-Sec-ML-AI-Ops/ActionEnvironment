@@ -21,7 +21,7 @@ jobs:
       MONGODB_USERNAME: anilnishad298_db_user
       MONGODB_PASSWORD: sUusyb7PpVmq5gEu
       MONGODB_CLUSTER_ADDRESS: cluster0.pdf6scl.mongodb.net/?appName=Cluster0
-      #PORT: 8080
+      PORT: 8080
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -38,8 +38,8 @@ jobs:
 
       - name: Run server
        # Setting environment variable on Step Level
-        env:
-          PORT: 8080
+        #env:
+          #PORT: 8080
         run: npm start & npx wait-on http://127.0.0.1:$PORT
     
       - name: Run tests
